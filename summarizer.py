@@ -3,10 +3,12 @@ import requests
 from google import genai
 from google.genai import types
 
-API_KEY = ""
-# API_KEY = "AIzaSyBX5TAieNdlB7xMvLQ3em9dLuFvuyhxSxk"
+from dotenv import load_dotenv
+load_dotenv()
 
-client = genai.Client(api_key=API_KEY)
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 def generate_incident_summary(
@@ -46,7 +48,7 @@ def generate_incident_summary(
         )
 
         response = client.models.generate_content(
-            model="gemini-2.0-flash",  # or "gemini-2.5-flash" if enabled on your key
+            model="gemini-2.5-flash",  # or "gemini-2.5-flash" if enabled on your key
             contents=[base_prompt, image_part],
         )
 

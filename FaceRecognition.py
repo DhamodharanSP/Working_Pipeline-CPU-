@@ -58,5 +58,6 @@ def recognize_faces(image, known_embeddings, known_names, threshold=0.45):
                 idx = np.argmax(sims)
                 score = sims[idx]
                 name = known_names[idx] if score > threshold else "Unknown"
-                results.append((name, score, box))
+                if name != "Unknown":
+                    results.append((name, score, box))
     return results
