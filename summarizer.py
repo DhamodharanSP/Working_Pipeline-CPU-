@@ -4,6 +4,7 @@ from google import genai
 from google.genai import types
 
 API_KEY = ""
+# API_KEY = "AIzaSyBX5TAieNdlB7xMvLQ3em9dLuFvuyhxSxk"
 
 client = genai.Client(api_key=API_KEY)
 
