@@ -3,7 +3,7 @@ import requests
 from google import genai
 from google.genai import types
 
-API_KEY = "AIzaSyCzZxE_cRVUwn1r5x3R_VyuzrUmWzfiJF4"
+API_KEY = ""
 
 client = genai.Client(api_key=API_KEY)
 
